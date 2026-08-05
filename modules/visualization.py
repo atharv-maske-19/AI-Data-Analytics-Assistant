@@ -5,7 +5,7 @@ import plotly.express as px
 
 def visualization_dashboard(df):
 
-    st.title("📈 Interactive Visualization Dashboard")
+    st.title(" Interactive Visualization Dashboard")
 
     if df is None:
         st.warning("Please upload a dataset first.")

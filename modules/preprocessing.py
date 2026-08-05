@@ -4,15 +4,15 @@ import pandas as pd
 
 def data_cleaning(df):
 
-    st.title("🧹 Data Cleaning")
+    st.title(" Data Cleaning")
 
     if df is None:
-        st.warning("⚠️ Please upload a dataset first.")
+        st.warning(" Please upload a dataset first.")
         return None
 
     cleaned_df = df.copy()
 
-    st.subheader("📊 Dataset Overview")
+    st.subheader("Dataset Overview")
 
     col1, col2, col3 = st.columns(3)
 
@@ -23,7 +23,7 @@ def data_cleaning(df):
     st.divider()
 
     # Missing Values Table
-    st.subheader("❌ Missing Values")
+    st.subheader(" Missing Values")
 
     missing_df = cleaned_df.isnull().sum().reset_index()
     missing_df.columns = ["Column", "Missing Values"]
@@ -89,7 +89,7 @@ def data_cleaning(df):
 
     st.divider()
 
-    st.subheader("📄 Cleaned Dataset")
+    st.subheader(" Cleaned Dataset")
 
     st.dataframe(cleaned_df, use_container_width=True)
 

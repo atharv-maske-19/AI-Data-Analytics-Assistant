@@ -8,7 +8,7 @@ import os
 
 def generate_report(df):
 
-    st.title("📄 AI Report Generator")
+    st.title(" AI Report Generator")
 
     if df is None:
         st.warning("Please upload a dataset first.")
@@ -25,7 +25,7 @@ def generate_report(df):
     st.write(f"Missing Values : {missing}")
     st.write(f"Duplicate Rows : {duplicates}")
 
-    if st.button("📄 Generate PDF Report"):
+    if st.button(" Generate PDF Report"):
 
         os.makedirs("reports", exist_ok=True)
 
@@ -98,7 +98,7 @@ def generate_report(df):
 
         doc.build(story)
 
-        st.success("✅ PDF Report Generated Successfully!")
+        st.success(" PDF Report Generated Successfully!")
 
         with open(pdf_path, "rb") as file:
 

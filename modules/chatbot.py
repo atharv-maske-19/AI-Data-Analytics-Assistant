@@ -20,7 +20,7 @@ if API_KEY:
 
 def chat_with_dataset(df):
 
-    st.title("💬 Chat with Your Dataset")
+    st.title("Chat with Your Dataset")
 
     if df is None:
         st.warning("Please upload a dataset first.")
@@ -68,6 +68,6 @@ say "I cannot determine that from the uploaded data."
                 contents=prompt
             )
 
-        st.markdown("## 🤖 Answer")
+        st.markdown("##  Answer")
 
         st.write(response.text)

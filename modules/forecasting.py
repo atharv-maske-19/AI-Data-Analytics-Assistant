@@ -6,7 +6,7 @@ import plotly.express as px
 
 def forecasting(df):
 
-    st.title("📉 Time Series Forecasting")
+    st.title(" Time Series Forecasting")
 
     if df is None:
         st.warning("Please upload a dataset first.")
@@ -50,10 +50,10 @@ def forecasting(df):
     numeric_cols = df.select_dtypes(include=["number"]).columns.tolist()
 
     if len(numeric_cols) == 0:
-        st.error("❌ No numeric columns found.")
+        st.error(" No numeric columns found.")
         return
 
-    target = st.selectbox("🎯 Select Target Column", numeric_cols)
+    target = st.selectbox(" Select Target Column", numeric_cols)
 
     future_days = st.slider(
         "Forecast Days",
@@ -65,7 +65,7 @@ def forecasting(df):
     # ----------------------------
     # Generate Forecast
     # ----------------------------
-    if st.button("🚀 Generate Forecast"):
+    if st.button(" Generate Forecast"):
 
         data = df[[date_col, target]].copy()
 
@@ -80,10 +80,10 @@ def forecasting(df):
         # Remove missing values
         data = data.dropna()
 
-        st.write("✅ Valid Rows:", len(data))
+        st.write(" Valid Rows:", len(data))
 
         if len(data) < 2:
-            st.error("❌ Not enough valid rows for forecasting.")
+            st.error(" Not enough valid rows for forecasting.")
             return
 
         # Sort by date
@@ -98,7 +98,7 @@ def forecasting(df):
 
         forecast = model.predict(future)
 
-        st.success("✅ Forecast Generated Successfully!")
+        st.success("Forecast Generated Successfully!")
 
         st.subheader("Forecast Results")
 

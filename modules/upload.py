@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def upload_dataset():
-    st.title("📂 Upload Dataset")
+    st.title(" Upload Dataset")
 
     uploaded_file = st.file_uploader(
         "Upload a CSV or Excel file",
@@ -20,12 +20,12 @@ def upload_dataset():
     else:
         df = pd.read_excel(uploaded_file)
 
-    st.success("✅ Dataset uploaded successfully!")
+    st.success(" Dataset uploaded successfully!")
 
     st.divider()
 
     # Dataset Information
-    st.subheader("📊 Dataset Information")
+    st.subheader(" Dataset Information")
 
     col1, col2, col3 = st.columns(3)
 
@@ -40,23 +40,23 @@ def upload_dataset():
 
     st.divider()
 
-    st.subheader("📋 Dataset Preview")
+    st.subheader(" Dataset Preview")
     st.dataframe(df, use_container_width=True)
 
-    st.subheader("📝 Column Names")
+    st.subheader(" Column Names")
     st.write(list(df.columns))
 
-    st.subheader("🔍 Data Types")
+    st.subheader(" Data Types")
     st.dataframe(df.dtypes.astype(str).reset_index().rename(
         columns={"index": "Column", 0: "Data Type"}
     ))
 
-    st.subheader("❌ Missing Values")
+    st.subheader(" Missing Values")
     st.dataframe(df.isnull().sum().reset_index().rename(
         columns={"index": "Column", 0: "Missing Values"}
     ))
 
-    st.subheader("🔁 Duplicate Rows")
+    st.subheader(" Duplicate Rows")
     st.write(df.duplicated().sum())
 
     st.subheader("📈 Statistical Summary")

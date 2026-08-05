@@ -66,7 +66,7 @@ Statistics
 
 def analytics_copilot(df):
 
-    st.title("🤖 AI Analytics Copilot")
+    st.title(" AI Analytics Copilot")
 
     st.caption("Analyze your dataset with Google Gemini AI")
 
@@ -75,7 +75,7 @@ def analytics_copilot(df):
         return
 
     if client is None:
-        st.error("❌ GEMINI_API_KEY not found.")
+        st.error(" GEMINI_API_KEY not found.")
         return
 
     # ============================================
@@ -89,10 +89,10 @@ def analytics_copilot(df):
 
     c1, c2, c3, c4 = st.columns(4)
 
-    c1.metric("📄 Rows", f"{rows:,}")
-    c2.metric("📊 Columns", cols)
-    c3.metric("❌ Missing", missing)
-    c4.metric("📌 Duplicate", duplicate)
+    c1.metric(" Rows", f"{rows:,}")
+    c2.metric(" Columns", cols)
+    c3.metric(" Missing", missing)
+    c4.metric(" Duplicate", duplicate)
 
     st.divider()
 
@@ -100,7 +100,7 @@ def analytics_copilot(df):
     # Dataset Preview
     # ============================================
 
-    st.subheader("📂 Dataset Preview")
+    st.subheader(" Dataset Preview")
 
     st.dataframe(
         df.head(10),
@@ -113,29 +113,29 @@ def analytics_copilot(df):
     # Quick Actions
     # ============================================
 
-    st.subheader("⚡ AI Quick Actions")
+    st.subheader(" AI Quick Actions")
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
 
-        if st.button("📊 Dataset Summary", use_container_width=True):
+        if st.button(" Dataset Summary", use_container_width=True):
             st.session_state.question = "Summarize this dataset."
 
-        if st.button("🧹 Cleaning Suggestions", use_container_width=True):
+        if st.button(" Cleaning Suggestions", use_container_width=True):
             st.session_state.question = "Suggest data cleaning improvements."
 
     with col2:
 
-        if st.button("📈 Business Insights", use_container_width=True):
+        if st.button(" Business Insights", use_container_width=True):
             st.session_state.question = "Generate business insights."
 
-        if st.button("🧠 Best ML Model", use_container_width=True):
+        if st.button(" Best ML Model", use_container_width=True):
             st.session_state.question = "Recommend the best machine learning model."
 
     with col3:
 
-        if st.button("📉 Forecast Recommendation", use_container_width=True):
+        if st.button(" Forecast Recommendation", use_container_width=True):
             st.session_state.question = "Should I perform forecasting?"
 
         if st.button("📄 Executive Summary", use_container_width=True):
@@ -160,13 +160,13 @@ def analytics_copilot(df):
     # Ask AI Button
     # ============================================
 
-    if st.button("🚀 Ask AI", use_container_width=True):
+    if st.button(" Ask AI", use_container_width=True):
 
         if question.strip() == "":
-            st.warning("⚠️ Please enter a question.")
+            st.warning(" Please enter a question.")
             return
 
-        with st.spinner("🤖 Gemini is analyzing your dataset..."):
+        with st.spinner(" Gemini is analyzing your dataset..."):
 
             summary = create_summary(df)
 
@@ -217,11 +217,11 @@ Keep the answer detailed, clear, and professional.
 
                 answer = response.text
 
-                st.success("✅ AI Analysis Completed")
+                st.success(" AI Analysis Completed")
 
                 st.divider()
 
-                st.subheader("🤖 AI Response")
+                st.subheader(" AI Response")
 
                 st.markdown(answer)
 
@@ -232,7 +232,7 @@ Keep the answer detailed, clear, and professional.
                 # ============================================
 
                 st.download_button(
-                    label="📥 Download AI Report",
+                    label=" Download AI Report",
                     data=answer,
                     file_name="AI_Analysis_Report.md",
                     mime="text/markdown",
@@ -255,7 +255,7 @@ Keep the answer detailed, clear, and professional.
 
             except Exception as e:
 
-                st.error(f"❌ {e}")
+                st.error(f" {e}")
 
     # ============================================
     # Chat History
@@ -267,7 +267,7 @@ Keep the answer detailed, clear, and professional.
 
             st.divider()
 
-            st.subheader("🕘 Previous Questions")
+            st.subheader(" Previous Questions")
 
             for i, item in enumerate(reversed(st.session_state.history), start=1):
 
@@ -297,7 +297,7 @@ Keep the answer detailed, clear, and professional.
 
     with col2:
 
-        if st.button("🔄 Reset Question", use_container_width=True):
+        if st.button(" Reset Question", use_container_width=True):
 
             st.session_state.question = ""
             st.rerun()

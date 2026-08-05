@@ -4,14 +4,14 @@ import pandas as pd
 
 def settings_page(df):
 
-    st.title("⚙️ Settings")
+    st.title(" Settings")
 
     st.markdown("---")
 
     # ======================================
     # Project Information
     # ======================================
-    st.subheader("👤 Project Information")
+    st.subheader(" Project Information")
 
     col1, col2 = st.columns(2)
 
@@ -23,14 +23,14 @@ def settings_page(df):
     with col2:
         st.write("**Domain:** Data Analytics & Data Science")
         st.write("**Framework:** Streamlit")
-        st.write("**Status:** ✅ Active")
+        st.write("**Status:**  Active")
 
     st.markdown("---")
 
     # ======================================
     # Dataset Information
     # ======================================
-    st.subheader("📊 Dataset Information")
+    st.subheader(" Dataset Information")
 
     if df is not None:
 
@@ -49,14 +49,14 @@ def settings_page(df):
         st.metric("Memory Usage (KB)", memory)
 
     else:
-        st.warning("⚠️ No dataset uploaded.")
+        st.warning(" No dataset uploaded.")
 
     st.markdown("---")
 
     # ======================================
     # Download Dataset
     # ======================================
-    st.subheader("📥 Export Dataset")
+    st.subheader(" Export Dataset")
 
     if df is not None:
 
@@ -83,7 +83,7 @@ def settings_page(df):
 
         st.session_state.df = None
 
-        st.success("✅ Dataset cleared successfully.")
+        st.success(" Dataset cleared successfully.")
 
         st.rerun()
 
@@ -92,7 +92,7 @@ def settings_page(df):
     # ======================================
     # Theme Selection
     # ======================================
-    st.subheader("🎨 Appearance")
+    st.subheader(" Appearance")
 
     theme = st.selectbox(
         "Choose Theme",
@@ -110,20 +110,20 @@ def settings_page(df):
     # ======================================
     # AI Configuration
     # ======================================
-    st.subheader("🤖 AI Configuration")
+    st.subheader(" AI Configuration")
 
     st.success("Google Gemini Connected")
 
     st.write("**Model:** Gemini 2.5 Flash")
     st.write("**Provider:** Google AI")
-    st.write("**Status:** Connected ✅")
+    st.write("**Status:** Connected ")
 
     st.markdown("---")
 
     # ======================================
     # Technology Stack
     # ======================================
-    st.subheader("💻 Technology Stack")
+    st.subheader(" Technology Stack")
 
     tech = pd.DataFrame({
         "Technology": [
@@ -145,7 +145,7 @@ def settings_page(df):
     # ======================================
     # About
     # ======================================
-    st.subheader("ℹ️ About")
+    st.subheader("About")
 
     st.info("""
 AI-Powered Data Analytics Assistant is an intelligent analytics platform that helps users:
@@ -173,4 +173,4 @@ Designed as a Final Year Project for Artificial Intelligence & Data Science.
 
     st.markdown("---")
 
-    st.success("🎉 AI-Powered Data Analytics Assistant Version 1.0")
+    st.success(" AI-Powered Data Analytics Assistant Version 1.0")

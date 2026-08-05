@@ -6,7 +6,7 @@ import seaborn as sns
 
 def perform_eda(df):
 
-    st.title("📊 Exploratory Data Analysis")
+    st.title(" Exploratory Data Analysis")
 
     if df is None:
         st.warning("Please upload a dataset first.")

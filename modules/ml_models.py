@@ -20,15 +20,15 @@ from sklearn.metrics import accuracy_score, r2_score, mean_squared_error
 
 def machine_learning(df):
 
-    st.title("🧠 Machine Learning")
+    st.title(" Machine Learning")
 
     if df is None:
         st.warning("Please upload a dataset first.")
         return
 
-    target = st.selectbox("🎯 Select Target Column", df.columns)
+    target = st.selectbox(" Select Target Column", df.columns)
 
-    if st.button("🚀 Train Models"):
+    if st.button(" Train Models"):
 
         X = df.drop(columns=[target]).copy()
         y = df[target].copy()
@@ -97,7 +97,7 @@ def machine_learning(df):
 
         if problem == "classification":
 
-            st.subheader("📌 Problem Type : Classification")
+            st.subheader("Problem Type : Classification")
 
             models = {
                 "Logistic Regression": LogisticRegression(max_iter=1000),
@@ -136,7 +136,7 @@ def machine_learning(df):
 
             st.dataframe(pd.DataFrame(results))
 
-            st.success(f"🏆 Best Accuracy : {best_score:.2%}")
+            st.success(f" Best Accuracy : {best_score:.2%}")
 
         # =====================================================
         # REGRESSION
@@ -144,7 +144,7 @@ def machine_learning(df):
 
         else:
 
-            st.subheader("📌 Problem Type : Regression")
+            st.subheader(" Problem Type : Regression")
 
             models = {
                 "Linear Regression": LinearRegression(),
@@ -186,7 +186,7 @@ def machine_learning(df):
 
             st.dataframe(pd.DataFrame(results))
 
-            st.success(f"🏆 Best R² Score : {best_score:.4f}")
+            st.success(f" Best R² Score : {best_score:.4f}")
 
         # -------------------------
         # Save Model
@@ -196,7 +196,7 @@ def machine_learning(df):
 
         joblib.dump(best_model, "models/best_model.pkl")
 
-        st.success("✅ Best model saved successfully.")
+        st.success(" Best model saved successfully.")
 
         with open("models/best_model.pkl", "rb") as f:
 

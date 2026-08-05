@@ -51,7 +51,7 @@ Statistical Summary:
 # -----------------------------
 def generate_ai_insights(df):
 
-    st.title("🤖 AI Insights")
+    st.title(" AI Insights")
 
     if df is None:
         st.warning("Please upload a dataset first.")
@@ -60,17 +60,17 @@ def generate_ai_insights(df):
     client = get_gemini_client()
 
     if client is None:
-        st.error("❌ GEMINI_API_KEY not found in the .env file.")
+        st.error(" GEMINI_API_KEY not found in the .env file.")
         return
 
     summary = create_dataset_summary(df)
 
-    st.subheader("📋 Dataset Summary")
+    st.subheader("Dataset Summary")
 
     with st.expander("View Dataset Summary"):
         st.text(summary)
 
-    if st.button("🚀 Generate AI Insights"):
+    if st.button(" Generate AI Insights"):
 
         with st.spinner("Analyzing dataset..."):
 

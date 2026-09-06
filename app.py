@@ -226,7 +226,7 @@ elif menu == " Forecasting":
 # Reports
 
 
-elif menu ==  Reports":
+elif menu == " Reports":
 
     generate_report(st.session_state.df)
 
